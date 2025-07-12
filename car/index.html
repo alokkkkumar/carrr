@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarRental - Your Journey Starts Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        /* Updated hero-background to use the uploaded image */
+        .hero-background {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('http://googleusercontent.com/file_content/1') no-repeat center center/cover;
+        }
+        .scroll-hidden::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-hidden {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">CarRental</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="#booking" class="text-gray-600 hover:text-blue-600 transition duration-300">Book a Car</a>
+                <a href="#cars" class="text-gray-600 hover:text-blue-600 transition duration-300">Our Cars</a>
+                <a href="#feedback" class="text-gray-600 hover:text-blue-600 transition duration-300">Feedback</a>
+                <a href="#dashboard" class="text-gray-600 hover:text-blue-600 transition duration-300">Dashboard</a>
+                <a href="#login" class="text-gray-600 hover:text-blue-600 transition duration-300">Login</a>
+                <a href="#signup" class="text-gray-600 hover:text-blue-600 transition duration-300">Sign Up</a>
+            </div>
+            <button id="menu-button" class="md:hidden text-gray-600 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white mt-4 rounded-lg shadow-lg">
+            <a href="#home" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Home</a>
+            <a href="#booking" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Book a Car</a>
+            <a href="#cars" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Our Cars</a>
+            <a href="#feedback" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Feedback</a>
+            <a href="#dashboard" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Dashboard</a>
+            <a href="#login" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Login</a>
+            <a href="#signup" class="block py-2 px-4 text-gray-600 hover:bg-gray-100 transition duration-300">Sign Up</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-background text-white py-20 md:py-32 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">Find Your Perfect Ride</h1>
+            <p class="text-lg md:text-xl mb-8 animate-fade-in-up">Rent a car for your next adventure, business trip, or daily commute.</p>
+        
+            <a href="#booking" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">Book Now</a>
+        </div>
+    </section>
+
+    <section id="home-fleet-showcase" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Explore Our Diverse Fleet</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/1.jpg" alt="City Cars" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-xl font-bold text-blue-600">Urban Explorers</h3>
+                        <p class="text-gray-600 text-sm mt-2">Compact and agile for city adventures.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/family.jpg" alt="Family SUVs" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-xl font-bold text-blue-600">Family Adventures</h3>
+                        <p class="text-gray-600 text-sm mt-2">Spacious SUVs for comfortable journeys.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/urban.jpg" alt="Premium Sedans" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-xl font-bold text-blue-600">Luxury & Style</h3>
+                        <p class="text-gray-600 text-sm mt-2">Premium sedans for executive travel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#cars" id="view-all-cars-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">View All Cars</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-16 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Book Your Car</h2>
+            <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl max-w-4xl mx-auto border border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+                    <div class="col-span-1 md:col-span-1">
+                        <label for="pickup-location" class="block text-gray-700 font-semibold mb-2">Pickup Location</label>
+                        <div class="relative">
+                            <select id="pickup-location" class="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none pr-10">
+                                <option value="">Please select location</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bengaluru">Bengaluru</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="kolkata">Kolkata</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="ahmedabad">Ahmedabad</option>
+                                <option value="pune">Pune</option>
+                                <option value="jaipur">Jaipur</option>
+                                <option value="lucknow">Lucknow</option>
+                                <option value="kochi">Kochi</option>
+                                <option value="goa">Goa</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 md:col-span-1">
+                        <label for="dropoff-location" class="block text-gray-700 font-semibold mb-2">Drop-off Location</label>
+                        <div class="relative">
+                            <select id="dropoff-location" class="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none pr-10">
+                                <option value="">Please select location</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bengaluru">Bengaluru</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="kolkata">Kolkata</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="ahmedabad">Ahmedabad</option>
+                                <option value="pune">Pune</option>
+                                <option value="jaipur">Jaipur</option>
+                                <option value="lucknow">Lucknow</option>
+                                <option value="kochi">Kochi</option>
+                                <option value="goa">Goa</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 md:col-span-1">
+                        <label for="pickup-date" class="block text-gray-700 font-semibold mb-2">Pick-up Date</label>
+                        <input type="date" id="pickup-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="2025-07-15">
+                    </div>
+                    <div class="col-span-1 md:col-span-1">
+                        <label for="return-date" class="block text-gray-700 font-semibold mb-2">Return Date</label>
+                        <input type="date" id="return-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" value="2025-07-17">
+                    </div>
+                    <div class="col-span-full">
+                        <button id="search-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-lg md:text-xl">
+                            <i class="fas fa-search mr-2"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cars" class="py-16 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Our Fleet</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/Luxury Sedan.jpg" alt="Luxury Sedan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Luxury Sedan</h3>
+                        <p class="text-gray-600 mb-4">Experience comfort and style with our premium sedans.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">₹7500/day</span>
+                            <span class="text-gray-500"><i class="fas fa-users mr-1"></i> 4 <i class="fas fa-briefcase ml-3 mr-1"></i> 2</span>
+                        </div>
+                        <button class="rent-now-button w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300 text-base md:text-lg">Rent Now</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/Compact Car.jpg" alt="Compact Car" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Compact Car</h3>
+                        <p class="text-gray-600 mb-4">Perfect for city drives and fuel efficiency.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">₹4000/day</span>
+                            <span class="text-gray-500"><i class="fas fa-users mr-1"></i> 4 <i class="fas fa-briefcase ml-3 mr-1"></i> 1</span>
+                        </div>
+                        <button class="rent-now-button w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300 text-base md:text-lg">Rent Now</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/SUV.jpg" alt="SUV" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">SUV</h3>
+                        <p class="text-gray-600 mb-4">Spacious and robust, ideal for family trips.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">₹9000/day</span>
+                            <span class="text-gray-500"><i class="fas fa-users mr-1"></i> 7 <i class="fas fa-briefcase ml-3 mr-1"></i> 4</span>
+                        </div>
+                        <button class="rent-now-button w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300 text-base md:text-lg">Rent Now</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/Sports Car.jpg" alt="Sports Car" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sports Car</h3>
+                        <p class="text-gray-600 mb-4">Unleash the thrill with our high-performance sports cars.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">₹15000/day</span>
+                            <span class="text-gray-500"><i class="fas fa-users mr-1"></i> 2 <i class="fas fa-briefcase ml-3 mr-1"></i> 1</span>
+                        </div>
+                        <button class="rent-now-button w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300 text-base md:text-lg">Rent Now</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="img/Minivan.jpg" alt="Minivan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Minivan</h3>
+                        <p class="text-gray-600 mb-4">Ideal for larger groups and extra luggage space.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">₹11000/day</span>
+                            <span class="text-gray-500"><i class="fas fa-users mr-1"></i> 7 <i class="fas fa-briefcase ml-3 mr-1"></i> 5</span>
+                        </div>
+                        <button class="rent-now-button w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300 text-base md:text-lg">Rent Now</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/600x400/6f42c1/ffffff?text=Electric+Car" alt="Electric Car" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Electric Car</h3>
+                        <p class="text-gray-600 mb-4">Go green with our eco-friendly electric vehicles.</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">₹8500/day</span>
+                            <span class="text-gray-500"><i class="fas fa-users mr-1"></i> 4 <i class="fas fa-briefcase ml-3 mr-1"></i> 2</span>
+                        </div>
+                        <button class="rent-now-button w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300 text-base md:text-lg">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="py-16 bg-purple-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                    <p class="text-gray-700 italic mb-4">"CarRental made my trip so easy! The booking process was smooth, and the car was in excellent condition."</p>
+                    <p class="font-semibold text-blue-600">- Priya Sharma</p>
+                    <div class="text-yellow-400 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                    <p class="text-gray-700 italic mb-4">"Great selection of cars and very friendly staff. I highly recommend CarRental for all your needs."</p>
+                    <p class="font-semibold text-blue-600">- Rahul Singh</p>
+                    <div class="text-yellow-400 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                    <p class="text-gray-700 italic mb-4">"Affordable prices and reliable cars. I'll definitely be using CarRental again for my next vacation."</p>
+                    <p class="font-semibold text-blue-600">- Ananya Gupta</p>
+                    <div class="text-yellow-400 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="py-16 bg-red-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Your Dashboard</h2>
+            <div id="dashboard-content-logged-in" class="hidden">
+                <p class="text-gray-700 text-lg mb-4">Welcome back, <span id="dashboard-user-email" class="font-semibold text-blue-600"></span>!</p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold mb-3 text-blue-600"><i class="fas fa-car-alt mr-2"></i> Recent Bookings</h3>
+                        <div id="recent-bookings-list" class="text-gray-600">
+                            <p>You have no recent bookings. <a href="#booking" class="text-blue-500 hover:underline">Book a car now!</a></p>
+                        </div>
+                        <button id="view-all-bookings-button" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-base md:text-lg">View All Bookings</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-xl font-bold mb-3 text-blue-600"><i class="fas fa-user-circle mr-2"></i> Profile Information</h3>
+                        <p class="text-gray-600 mb-4">Update your personal details and preferences.</p>
+                        <button id="edit-profile-button" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-base md:text-lg">Edit Profile</button>
+                    </div>
+                </div>
+
+                <div id="edit-profile-form-container" class="hidden mt-10 max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200 text-left">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600">Edit Your Profile</h3>
+                    <form id="profile-edit-form">
+                        <div class="mb-4">
+                            <label for="profile-name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                            <input type="text" id="profile-name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="profile-mobile" class="block text-gray-700 text-sm font-bold mb-2">Mobile Number</label>
+                            <input type="tel" id="profile-mobile" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="e.g., +91 9876543210">
+                        </div>
+                        <div class="mb-4">
+                            <label for="profile-address" class="block text-gray-700 text-sm font-bold mb-2">Address</label>
+                            <textarea id="profile-address" rows="3" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="Your full address"></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <label for="profile-driver-license" class="block text-gray-700 text-sm font-bold mb-2">Driver's License Number (for booking)</label>
+                            <input type="text" id="profile-driver-license" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="Your Driver's License Number">
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <button type="button" id="cancel-edit-profile" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-300">Cancel</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="dashboard-content-logged-out">
+                <p class="text-gray-700 text-lg">Please <a href="#login" class="text-blue-500 hover:underline">Login</a> or <a href="#signup" class="text-blue-500 hover:underline">Sign Up</a> to view your dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="all-bookings" class="py-16 bg-gray-100 hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Your Booking Records</h2>
+            <div id="booking-records-list" class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                
+                <p class="text-gray-600">No booking records found.</p>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#dashboard" id="back-to-dashboard-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">Back to Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="confirmation" class="py-16 bg-yellow-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-green-600">Booking Confirmed!</h2>
+            <p class="text-lg text-gray-700 mb-4">Thank you for your booking. Your car rental details have been sent to your email.</p>
+            <p class="text-gray-600">We look forward to seeing you soon!</p>
+            <a href="#home" id="back-to-home-button" class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">Back to Home</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">CarRental</h3>
+                <p class="text-gray-400 text-sm">Premium car rental service with a wide selection of luxury and everyday vehicles for all your driving needs.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#cars" class="text-gray-400 hover:text-white transition duration-300">Browse Cars</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">List Your Car</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Resources</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Help Center</a></li>
+                    <li><a href="#" class="text-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Insurance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact</h3>
+                <p class="text-gray-400 text-sm">1234 Maharashta</p>
+                <p class="text-gray-400 text-sm">Mumbai, India 94107</p>
+                <p class="text-gray-400 text-sm mt-2">+91 234 567890</p>
+                <p class="text-gray-400 text-sm">info@example.com</p>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Brand. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-white">Privacy</a>
+                <a href="#" class="hover:text-white">Terms</a>
+                <a href="#" class="hover:text-white">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal Structure -->
+    <div id="auth-modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[99] hidden flex items-center justify-center">
+        <div id="auth-modal-content" class="bg-white p-8 rounded-xl shadow-xl max-w-md w-full relative">
+            <button id="auth-modal-close-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+            <!-- Login Form Container -->
+            <div id="login-form-wrapper" class="hidden">
+                <h2 class="text-3xl font-bold text-center mb-6">Login</h2>
+                <form id="login-form">
+                    <div class="mb-4">
+                        <label for="login-email" class="block text-gray-700 text-sm font-bold mb-2 text-left">Email</label>
+                        <input type="email" id="login-email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="your@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="login-password" class="block text-gray-700 text-sm font-bold mb-2 text-left">Password</label>
+                        <input type="password" id="login-password" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="********">
+                    </div>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 w-full text-base md:text-lg">Sign In</button>
+                    <p class="text-center text-gray-600 text-sm mt-4">Don't have an account? <a href="#" id="show-signup-from-login" class="text-blue-500 hover:underline">Sign Up</a></p>
+                </form>
+            </div>
+
+            <!-- Sign Up Form Container -->
+            <div id="signup-form-wrapper" class="hidden">
+                <h2 class="text-3xl font-bold text-center mb-6">Sign Up</h2>
+                <form id="signup-form">
+                    <div class="mb-4">
+                        <label for="signup-name" class="block text-gray-700 text-sm font-bold mb-2 text-left">Full Name</label>
+                        <input type="text" id="signup-name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="John Doe">
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-email" class="block text-gray-700 text-sm font-bold mb-2 text-left">Email</label>
+                        <input type="email" id="signup-email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="your@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="signup-password" class="block text-gray-700 text-sm font-bold mb-2 text-left">Password</label>
+                        <input type="password" id="signup-password" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500" placeholder="********">
+                    </div>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 w-full text-base md:text-lg">Register</button>
+                    <p class="text-center text-gray-600 text-sm mt-4">Already have an account? <a href="#" id="show-login-from-signup" class="text-blue-500 hover:underline">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+        let users = JSON.parse(localStorage.getItem('users')) || {};
+
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.getElementById('menu-button');
+        const searchButton = document.getElementById('search-button');
+        const rentNowButtons = document.querySelectorAll('.rent-now-button');
+        const backToHomeButton = document.getElementById('back-to-home-button');
+        const viewAllCarsButton = document.getElementById('view-all-cars-button');
+        const homeFleetShowcase = document.getElementById('home-fleet-showcase');
+
+        const editProfileButton = document.getElementById('edit-profile-button');
+        const editProfileFormContainer = document.getElementById('edit-profile-form-container');
+        const profileEditForm = document.getElementById('profile-edit-form');
+        const cancelEditProfileButton = document.getElementById('cancel-edit-profile');
+
+        const profileNameInput = document.getElementById('profile-name');
+        const profileMobileInput = document.getElementById('profile-mobile');
+        const profileAddressInput = document.getElementById('profile-address');
+        const profileDriverLicenseInput = document.getElementById('profile-driver-license');
+
+        const authModalOverlay = document.getElementById('auth-modal-overlay');
+        const authModalCloseButton = document.getElementById('auth-modal-close-button');
+        const loginFormWrapper = document.getElementById('login-form-wrapper');
+        const signupFormWrapper = document.getElementById('signup-form-wrapper');
+        const showSignupFromLoginLink = document.getElementById('show-signup-from-login');
+        const showLoginFromSignupLink = document.getElementById('show-login-from-signup');
+
+        const recentBookingsList = document.getElementById('recent-bookings-list');
+        const viewAllBookingsButton = document.getElementById('view-all-bookings-button');
+        const bookingRecordsList = document.getElementById('booking-records-list');
+        const backToDashboardButton = document.getElementById('back-to-dashboard-button');
+
+
+        function displayPage(pageId) {
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            if (pageId === 'home') {
+                homeFleetShowcase.classList.remove('hidden');
+            } else {
+                homeFleetShowcase.classList.add('hidden');
+            }
+        }
+
+        function showAuthModal() {
+            authModalOverlay.classList.remove('hidden');
+        }
+
+        function hideAuthModal() {
+            authModalOverlay.classList.add('hidden');
+            loginFormWrapper.classList.add('hidden');
+            signupFormWrapper.classList.add('hidden');
+        }
+
+        function showLoginModal() {
+            hideAuthModal();
+            loginFormWrapper.classList.remove('hidden');
+            showAuthModal();
+        }
+
+        function showSignupModal() {
+            hideAuthModal();
+            signupFormWrapper.classList.remove('hidden');
+            showAuthModal();
+        }
+
+        function showMessage(message, type = 'error') {
+            const messageBox = document.createElement('div');
+            messageBox.className = `fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 rounded-lg shadow-lg z-[100] ${type === 'error' ? 'bg-red-500' : 'bg-green-500'} text-white`;
+            messageBox.textContent = message;
+            document.body.appendChild(messageBox);
+            setTimeout(() => {
+                messageBox.remove();
+            }, 3000);
+        }
+
+        function updateAuthUI() {
+            const desktopLoginLink = document.querySelector('nav .hidden.md\\:flex a[href="#login"]');
+            const desktopSignupLink = document.querySelector('nav .hidden.md\\:flex a[href="#signup"]');
+            const mobileLoginLink = mobileMenu.querySelector('a[href="#login"]');
+            const mobileSignupLink = mobileMenu.querySelector('a[href="#signup"]');
+
+            if (currentUser) {
+                desktopLoginLink.textContent = `Welcome, ${currentUser.email}`;
+                desktopLoginLink.href = "#dashboard";
+                desktopSignupLink.textContent = "Logout";
+                desktopSignupLink.href = "#logout";
+
+                mobileLoginLink.textContent = `Welcome, ${currentUser.email}`;
+                mobileLoginLink.href = "#dashboard";
+                mobileSignupLink.textContent = "Logout";
+                mobileSignupLink.href = "#logout";
+
+                document.getElementById('dashboard-user-email').textContent = currentUser.email;
+                document.getElementById('dashboard-content-logged-in').classList.remove('hidden');
+                document.getElementById('dashboard-content-logged-out').classList.add('hidden');
+
+                if (currentUser.profile) {
+                    profileNameInput.value = currentUser.profile.name || '';
+                    profileMobileInput.value = currentUser.profile.mobile || '';
+                    profileAddressInput.value = currentUser.profile.address || '';
+                    profileDriverLicenseInput.value = currentUser.profile.driverLicense || '';
+                } else {
+                    profileNameInput.value = '';
+                    profileMobileInput.value = '';
+                    profileAddressInput.value = '';
+                    profileDriverLicenseInput.value = '';
+                }
+                renderBookings();
+            } else {
+                desktopLoginLink.textContent = "Login";
+                desktopLoginLink.href = "#login";
+                desktopSignupLink.textContent = "Sign Up";
+                desktopSignupLink.href = "#signup";
+
+                mobileLoginLink.textContent = "Login";
+                mobileLoginLink.href = "#login";
+                mobileSignupLink.textContent = "Sign Up";
+                mobileSignupLink.href = "#signup";
+
+                document.getElementById('dashboard-content-logged-in').classList.add('hidden');
+                document.getElementById('dashboard-content-logged-out').classList.remove('hidden');
+                editProfileFormContainer.classList.add('hidden');
+            }
+        }
+
+        function renderBookings() {
+            if (currentUser && users[currentUser.email] && users[currentUser.email].bookings) {
+                const userBookings = users[currentUser.email].bookings;
+                recentBookingsList.innerHTML = '';
+                bookingRecordsList.innerHTML = '';
+
+                if (userBookings.length > 0) {
+                    const recent = userBookings.slice(-2);
+                    recent.forEach(booking => {
+                        const bookingDiv = document.createElement('div');
+                        bookingDiv.className = 'border-b border-gray-200 py-2 last:border-b-0';
+                        bookingDiv.innerHTML = `<p class="font-semibold">${booking.carType} from ${booking.pickupLocation} to ${booking.dropoffLocation}</p><p class="text-sm text-gray-500">Dates: ${booking.pickupDate} to ${booking.returnDate}</p>`;
+                        recentBookingsList.appendChild(bookingDiv);
+                    });
+
+                    userBookings.forEach(booking => {
+                        const bookingDiv = document.createElement('div');
+                        bookingDiv.className = 'border-b border-gray-200 py-2 last:border-b-0';
+                        bookingDiv.innerHTML = `<p class="font-semibold">${booking.carType} from ${booking.pickupLocation} to ${booking.dropoffLocation}</p><p class="text-sm text-gray-500">Dates: ${booking.pickupDate} to ${booking.returnDate}</p>`;
+                        bookingRecordsList.appendChild(bookingDiv);
+                    });
+                } else {
+                    recentBookingsList.innerHTML = '<p>You have no recent bookings. <a href="#booking" class="text-blue-500 hover:underline">Book a car now!</a></p>';
+                    bookingRecordsList.innerHTML = '<p class="text-gray-600">No booking records found.</p>';
+                }
+            } else {
+                recentBookingsList.innerHTML = '<p>You have no recent bookings. <a href="#booking" class="text-blue-500 hover:underline">Book a car now!</a></p>';
+                bookingRecordsList.innerHTML = '<p class="text-gray-600">No booking records found.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+
+                    if (targetId === 'login') {
+                        showLoginModal();
+                    } else if (targetId === 'signup') {
+                        showSignupModal();
+                    } else if (targetId === 'logout') {
+                        currentUser = null;
+                        localStorage.removeItem('loggedInUserEmail');
+                        updateAuthUI();
+                        hideAuthModal();
+                        showLoginModal();
+                    }
+                    else {
+                        displayPage(targetId);
+                        window.location.hash = `#${targetId}`;
+                        hideAuthModal();
+                    }
+
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            if (searchButton) {
+                searchButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPage('cars');
+                    window.location.hash = '#cars';
+                });
+            }
+
+            rentNowButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (currentUser) {
+                        const newBooking = {
+                            carType: e.target.closest('.bg-white').querySelector('h3').textContent,
+                            pickupLocation: document.getElementById('pickup-location').value || 'Unknown',
+                            dropoffLocation: document.getElementById('dropoff-location').value || 'Unknown',
+                            pickupDate: document.getElementById('pickup-date').value,
+                            returnDate: document.getElementById('return-date').value,
+                            bookingDate: new Date().toISOString().slice(0, 10)
+                        };
+
+                        if (!users[currentUser.email].bookings) {
+                            users[currentUser.email].bookings = [];
+                        }
+                        users[currentUser.email].bookings.push(newBooking);
+                        localStorage.setItem('users', JSON.stringify(users));
+                        localStorage.setItem('loggedInUserEmail', currentUser.email);
+
+                        displayPage('confirmation');
+                        window.location.hash = '#confirmation';
+                        showMessage('Booking confirmed!', 'success');
+                    } else {
+                        showMessage('Please log in to book a car.', 'error');
+                        showLoginModal();
+                    }
+                });
+            });
+
+            if (backToHomeButton) {
+                backToHomeButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPage('home');
+                    window.location.hash = '#home';
+                });
+            }
+
+            if (viewAllCarsButton) {
+                viewAllCarsButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPage('cars');
+                    window.location.hash = '#cars';
+                });
+            }
+
+            if (viewAllBookingsButton) {
+                viewAllBookingsButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPage('all-bookings');
+                    window.location.hash = '#all-bookings';
+                    renderBookings();
+                });
+            }
+
+            if (backToDashboardButton) {
+                backToDashboardButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPage('dashboard');
+                    window.location.hash = '#dashboard';
+                });
+            }
+
+            const loginForm = document.getElementById('login-form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('login-email').value;
+                    const password = document.getElementById('login-password').value;
+
+                    const user = users[email];
+
+                    if (!user) {
+                        showMessage('User not found. Please sign up.', 'error');
+                        return;
+                    }
+
+                    if (user.password !== password) {
+                        showMessage('Wrong password.', 'error');
+                        return;
+                    }
+
+                    currentUser = user;
+                    localStorage.setItem('loggedInUserEmail', email);
+                    updateAuthUI();
+                    displayPage('dashboard');
+                    window.location.hash = '#dashboard';
+                    hideAuthModal();
+                    showMessage('Login successful!', 'success');
+                });
+            }
+
+            const signupForm = document.getElementById('signup-form');
+            if (signupForm) {
+                signupForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('signup-name').value;
+                    const email = document.getElementById('signup-email').value;
+                    const password = document.getElementById('signup-password').value;
+
+                    if (!name || !email || !password) {
+                        showMessage('Please fill in all fields.', 'error');
+                        return;
+                    }
+
+                    if (users[email]) {
+                        showMessage('Account with this email already exists. Please log in.', 'error');
+                        return;
+                    }
+
+                    users[email] = {
+                        email: email,
+                        password: password,
+                        profile: {
+                            name: name,
+                            mobile: '',
+                            address: '',
+                            driverLicense: ''
+                        },
+                        bookings: []
+                    };
+                    localStorage.setItem('users', JSON.stringify(users));
+
+                    currentUser = users[email];
+                    localStorage.setItem('loggedInUserEmail', email);
+                    updateAuthUI();
+                    displayPage('dashboard');
+                    window.location.hash = '#dashboard';
+                    hideAuthModal();
+                    showMessage('Sign Up successful! You can now log in.', 'success');
+                });
+            }
+
+            if (editProfileButton) {
+                editProfileButton.addEventListener('click', () => {
+                    if (currentUser) {
+                        editProfileFormContainer.classList.remove('hidden');
+                        if (currentUser.profile) {
+                            profileNameInput.value = currentUser.profile.name || '';
+                            profileMobileInput.value = currentUser.profile.mobile || '';
+                            profileAddressInput.value = currentUser.profile.address || '';
+                            profileDriverLicenseInput.value = currentUser.profile.driverLicense || '';
+                        }
+                    } else {
+                        showMessage('Please log in to edit your profile.', 'error');
+                    }
+                });
+            }
+
+            if (cancelEditProfileButton) {
+                cancelEditProfileButton.addEventListener('click', () => {
+                    editProfileFormContainer.classList.add('hidden');
+                });
+            }
+
+            if (profileEditForm) {
+                profileEditForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (currentUser) {
+                        currentUser.profile.name = profileNameInput.value;
+                        currentUser.profile.mobile = profileMobileInput.value;
+                        currentUser.profile.address = profileAddressInput.value;
+                        currentUser.profile.driverLicense = profileDriverLicenseInput.value;
+
+                        localStorage.setItem('users', JSON.stringify(users));
+
+                        showMessage('Profile updated successfully!', 'success');
+                        editProfileFormContainer.classList.add('hidden');
+                        updateAuthUI();
+                    }
+                });
+            }
+
+            if (authModalCloseButton) {
+                authModalCloseButton.addEventListener('click', hideAuthModal);
+            }
+            if (showSignupFromLoginLink) {
+                showSignupFromLoginLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSignupModal();
+                });
+            }
+            if (showLoginFromSignupLink) {
+                showLoginFromSignupLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showLoginModal();
+                });
+            }
+
+
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const dayAfterTomorrow = new Date(today);
+            dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 2);
+
+            const formatDate = (date) => {
+                const yyyy = date.getFullYear();
+                const mm = String(date.getMonth() + 1).padStart(2, '0');
+                const dd = String(date.getDate()).padStart(2, '0');
+                return `${yyyy}-${mm}-${dd}`;
+            };
+
+            document.getElementById('pickup-date').value = formatDate(tomorrow);
+            document.getElementById('return-date').value = formatDate(dayAfterTomorrow);
+
+            const storedUserEmail = localStorage.getItem('loggedInUserEmail');
+            if (storedUserEmail && users[storedUserEmail]) {
+                currentUser = users[storedUserEmail];
+            }
+
+            const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
+            displayPage(initialPage);
+            updateAuthUI();
+
+            if (!currentUser) {
+                showLoginModal();
+            }
+        });
+    </script>
+</body>
+</html>
